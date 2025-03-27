@@ -1,10 +1,28 @@
 {
-  "name": "cve-test-app",
+  "name": "npm-2020-vuln-test",
   "version": "1.0.0",
+  "description": "Test app for npm packages with vulnerabilities from 2020",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "audit": "npm audit",
+    "audit-fix": "npm audit fix"
+  },
   "dependencies": {
-    "next": "^14.0.0",
-    "cross-spawn": "7.0.4",
-    "parse-server": "^5.0.0",
-    "contenttools": "^1.6.14"
-  }
+    "minimatch": "3.0.4",
+    "yargs-parser": "13.1.1",
+    "ini": "1.3.5",
+    "ssri": "8.0.0",
+    "elliptic": "6.5.2",
+    "node-fetch": "2.6.0",
+    "jsonwebtoken": "8.5.0",
+    "lodash": "4.17.19",
+    "express-fileupload": "1.1.9",
+    "axios": "0.19.2"
+  },
+  "devDependencies": {
+    "snyk": "^1.1295.0"
+  },
+  "author": "",
+  "license": "MIT"
 }
