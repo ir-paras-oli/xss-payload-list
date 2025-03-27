@@ -1,0 +1,22 @@
+{
+  "name": "vulnerable-project",
+  "version": "1.0.0",
+  "description": "A project with known vulnerable npm packages",
+  "main": "index.js",
+  "dependencies": {
+    "@rspack/core": "1.1.7",
+    "@rspack/cli": "1.1.7",
+    "vant": "4.9.14",
+    "@typescript_eslinter/eslint": "1.0.0",
+    "types-node": "1.0.0",
+    "pkg": "5.8.0",
+    "node-tar": "6.2.0",
+    "undici": "6.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
