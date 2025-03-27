@@ -1,38 +1,45 @@
 {
-  "name": "vulnerable-project",
+  "name": "npm-vulnerability-audit",
   "version": "1.0.0",
-  "description": "A project containing multiple vulnerable npm packages",
+  "description": "A project to audit npm packages for vulnerabilities post-Nov 2024",
   "main": "index.js",
-  "dependencies": {
-    "@rspack/core": "1.1.7",
-    "@rspack/cli": "1.1.7",
-    "vant": "4.9.14",
-    "nodejs-prom-reporter": "6.5.8",
-    "pkg": "5.8.0",
-    "undici": "6.6.0",
-    "node-tar": "6.2.0",
-    "eventsource": "2.0.2",
-    "lodash": "4.17.21",
-    "xmldom": "0.8.8",
-    "sanitize-html": "2.8.0",
-    "express-fileupload": "1.4.0",
-    "jsonwebtoken": "9.0.0",
-    "mongoose": "6.8.0",
-    "react-dev-utils": "12.0.1",
-    "electron": "28.1.0",
-    "minimist": "1.2.8",
-    "marked": "4.0.18",
-    "dotenv": "16.1.4"
-  },
-  "devDependencies": {
-    "typescript": "5.3.3",
-    "eslint": "8.52.0",
-    "jest": "29.7.0"
-  },
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "audit": "npm audit",
+    "audit-fix": "npm audit fix",
+    "snyk-test": "npx snyk test",
+    "depcheck": "npx depcheck"
   },
-  "author": "Paras Oli",
-  "license": "ISC"
+  "dependencies": {
+    // Real packages with historical or recent vulnerability context
+    "express": "^4.19.2",              // Latest as of Mar 2025, but transitive deps may have issues
+    "undici": "^6.20.0",               // Pre-Jan 2025 patch version, vulnerable to memory leaks
+    "lodash": "^4.17.21",              // Common dep, often flagged for prototype pollution in older setups
+    "phin": "^3.7.0",                  // Pre-3.7.1 had redirect header issues (fixed May 2024)
+    "pdf-image": "^2.0.0",             // Known for command injection, no fix as of 2024 reports
+    "event-stream": "^3.3.6",          // Infamous 2018 backdoor, still a cautionary tale
+    "@ladle/react": "^2.5.1",          // Pre-2.5.2 had file access issues (fixed 2024)
+
+    // Hypothetical packages published post-Nov 2024 (fictional for demo)
+    "crypto-utils-2025": "^1.0.0",     // Imaginary new package, could have weak encryption
+    "fast-http-handler": "^1.2.0",     // Fictional, might use outdated undici
+    "new-fs-toolkit": "^0.9.0",        // Hypothetical, risky if it bypasses permission models
+    "web3-auth-lib": "^2.0.0",         // Fictional, potential manifest confusion risk
+    "data-sync-2025": "^1.1.0",        // Imaginary, could have unsanitized inputs
+
+    // Recently compromised packages (based on late 2024 reports)
+    "@rspack/core": "^1.1.6",          // Compromised Dec 2024 with crypto miner (safe at 1.1.8)
+    "@rspack/cli": "^1.1.6",           // Same attack as above
+    "vant": "^4.9.2",                  // Token theft issue Dec 2024, fixed in later versions
+    "@typescript_eslinter/eslint": "^1.0.0" // Fake package from Dec 2024 typosquatting attack
+  },
+  "devDependencies": {
+    // Tools for vulnerability detection and management
+    "snyk": "^1.1295.0",              // Security auditing tool
+    "depcheck": "^1.4.7",             // Checks for unused dependencies
+    "npm-audit-resolver": "^3.0.0",   // Helps resolve audit issues interactively
+    "eslint": "^8.57.0"               // Linting to catch potential security flaws
+  },
+  "author": "",
+  "license": "MIT"
 }
