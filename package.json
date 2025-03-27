@@ -1,7 +1,7 @@
 {
-  "name": "npm-2020-vuln-test",
+  "name": "npm-2025-vuln-test",
   "version": "1.0.0",
-  "description": "Test app for npm packages with vulnerabilities from 2020",
+  "description": "Test app for npm packages with vulnerabilities from 2025",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,16 +9,16 @@
     "audit-fix": "npm audit fix"
   },
   "dependencies": {
-    "minimatch": "3.0.4",
-    "yargs-parser": "13.1.1",
-    "ini": "1.3.5",
-    "ssri": "8.0.0",
-    "elliptic": "6.5.2",
-    "node-fetch": "2.6.0",
-    "jsonwebtoken": "8.5.0",
-    "lodash": "4.17.19",
-    "express-fileupload": "1.1.9",
-    "axios": "0.19.2"
+    "next": "14.0.0",
+    "parse-server": "5.0.0",
+    "contenttools": "1.6.14",
+    "@rspack/core": "1.1.6",
+    "@rspack/cli": "1.1.6",
+    "vant": "4.9.2",
+    "@typescript_eslinter/eslint": "1.0.0",
+    "undici": "6.20.0",
+    "vite": "5.0.0",
+    "@mozilla/readability": "0.4.4"
   },
   "devDependencies": {
     "snyk": "^1.1295.0"
