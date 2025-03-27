@@ -1,45 +1,10 @@
 {
-  "name": "npm-vulnerability-audit",
+  "name": "cve-test-app",
   "version": "1.0.0",
-  "description": "A project to audit npm packages for vulnerabilities post-Nov 2024",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "audit": "npm audit",
-    "audit-fix": "npm audit fix",
-    "snyk-test": "npx snyk test",
-    "depcheck": "npx depcheck"
-  },
   "dependencies": {
-    // Real packages with historical or recent vulnerability context
-    "express": "^4.19.2",              // Latest as of Mar 2025, but transitive deps may have issues
-    "undici": "^6.20.0",               // Pre-Jan 2025 patch version, vulnerable to memory leaks
-    "lodash": "^4.17.21",              // Common dep, often flagged for prototype pollution in older setups
-    "phin": "^3.7.0",                  // Pre-3.7.1 had redirect header issues (fixed May 2024)
-    "pdf-image": "^2.0.0",             // Known for command injection, no fix as of 2024 reports
-    "event-stream": "^3.3.6",          // Infamous 2018 backdoor, still a cautionary tale
-    "@ladle/react": "^2.5.1",          // Pre-2.5.2 had file access issues (fixed 2024)
-
-    // Hypothetical packages published post-Nov 2024 (fictional for demo)
-    "crypto-utils-2025": "^1.0.0",     // Imaginary new package, could have weak encryption
-    "fast-http-handler": "^1.2.0",     // Fictional, might use outdated undici
-    "new-fs-toolkit": "^0.9.0",        // Hypothetical, risky if it bypasses permission models
-    "web3-auth-lib": "^2.0.0",         // Fictional, potential manifest confusion risk
-    "data-sync-2025": "^1.1.0",        // Imaginary, could have unsanitized inputs
-
-    // Recently compromised packages (based on late 2024 reports)
-    "@rspack/core": "^1.1.6",          // Compromised Dec 2024 with crypto miner (safe at 1.1.8)
-    "@rspack/cli": "^1.1.6",           // Same attack as above
-    "vant": "^4.9.2",                  // Token theft issue Dec 2024, fixed in later versions
-    "@typescript_eslinter/eslint": "^1.0.0" // Fake package from Dec 2024 typosquatting attack
-  },
-  "devDependencies": {
-    // Tools for vulnerability detection and management
-    "snyk": "^1.1295.0",              // Security auditing tool
-    "depcheck": "^1.4.7",             // Checks for unused dependencies
-    "npm-audit-resolver": "^3.0.0",   // Helps resolve audit issues interactively
-    "eslint": "^8.57.0"               // Linting to catch potential security flaws
-  },
-  "author": "",
-  "license": "MIT"
+    "next": "^14.0.0",
+    "cross-spawn": "7.0.4",
+    "parse-server": "^5.0.0",
+    "contenttools": "^1.6.14"
+  }
 }
